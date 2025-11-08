@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, KeyboardEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import TypedIntro from './TypedIntro'
-import data from '../data.json'
+import data from '@/lib/data.json'
 
 interface HistoryItem {
   command: string
@@ -246,7 +246,7 @@ export default function Terminal() {
 
     const output = commands[trimmedCmd]
       ? commands[trimmedCmd]()
-      : <p className="text-red-400">Command not found: {cmd}. Type "help" for available commands.</p>
+      : <p className="text-red-400">Command not found: {cmd}. Type &quot;help&quot; for available commands.</p>
 
     setHistory((prev) => [...prev, { command: cmd, output }])
   }
